@@ -1,4 +1,4 @@
-# Website for my blog
+# aaryan-portfolio
 
 A minimalistic personal blog and learning documentation website built with Next.js, Tailwind, and TypeScript.
 
