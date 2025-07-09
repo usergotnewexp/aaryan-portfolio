@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
@@ -7,6 +8,14 @@ import { cn } from '@/lib/utils/utils'
 
 export function ThemeToggle({ className }: { className?: string }) {
     const { theme, setTheme, systemTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
     const isDark = theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
 
     return (
